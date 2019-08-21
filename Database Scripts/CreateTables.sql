@@ -1,4 +1,3 @@
-USE [MyDatabase]
 --Select the database where we need to run this script
 
 --USE [MyDatabase]
