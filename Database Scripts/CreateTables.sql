@@ -4,6 +4,7 @@
 USE [AnirbanDB]
 GO
 
+--Creating table for Countries
 CREATE TABLE dbo.COU_COUNTRY
 ( country_id INT IDENTITY(1,1) PRIMARY KEY,
   country_code NVARCHAR(3) NOT NULL UNIQUE,
@@ -11,6 +12,7 @@ CREATE TABLE dbo.COU_COUNTRY
 )
 GO
 
+--Script to create department table
 CREATE TABLE dbo.DEP_DEPARTMENT(
 	department_id INT IDENTITY(1,1) NOT NULL,
 	department_name NVARCHAR(50) NOT NULL,
