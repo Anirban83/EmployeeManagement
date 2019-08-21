@@ -11,6 +11,7 @@ CREATE TABLE dbo.COU_COUNTRY
 )
 GO
 
+--Script to create department table
 CREATE TABLE dbo.DEP_DEPARTMENT(
 	department_id INT IDENTITY(1,1) NOT NULL,
 	department_name NVARCHAR(50) NOT NULL,
