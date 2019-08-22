@@ -30,6 +30,7 @@ CREATE TABLE dbo.DEP_DEPARTMENT(
 )
 GO
 
+--created employee table
 CREATE TABLE dbo.EMP_EMPLOYEE
 ( employee_id INT IDENTITY(1,1) PRIMARY KEY,
   first_name VARCHAR(50) NOT NULL,
