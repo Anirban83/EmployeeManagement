@@ -54,6 +54,7 @@ CREATE TABLE dbo.EMP_EMPLOYEE
 )
 GO
 
+--created employee details table
 CREATE TABLE dbo.EMD_EMPLOYEE_DETAILS
 ( employee_details_id INT IDENTITY(1,1) PRIMARY KEY,
   employee_id INT NOT NULL,
