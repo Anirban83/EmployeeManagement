@@ -1,7 +1,8 @@
 --Select the database where we need to run this script
 
-USE [MyDatabase]
---USE [AnirbanDB]
+--Dummy change
+--USE [MyDatabase]
+USE [AnirbanDB]
 GO
 
 --Creating table for Countries
