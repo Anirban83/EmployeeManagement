@@ -1,8 +1,8 @@
 --Select the database where we need to run this script
 
 --Dummy change
---USE [MyDatabase]
-USE [AnirbanDB]
+USE [MyDatabase]
+--USE [AnirbanDB]
 GO
 
 --Creating table for Countries
@@ -11,9 +11,9 @@ CREATE TABLE dbo.COU_COUNTRY
   country_code NVARCHAR(3) NOT NULL UNIQUE,
   country_name NVARCHAR(50) NOT NULL UNIQUE,
   created_by NVARCHAR(50) NOT NULL,
-  created_on DATETIME NOT NULL,
-  updated_by NVARCHAR(50) NOT NULL,
-  updated_on DATETIME NOT NULL
+    created_on DATETIME NULL,
+    updated_by NVARCHAR(50) NOT NULL,
+    updated_on DATETIME NULL
 )
 GO
 
@@ -22,9 +22,9 @@ CREATE TABLE dbo.DEP_DEPARTMENT(
 	department_id INT IDENTITY(1,1) NOT NULL,
 	department_name NVARCHAR(50) NOT NULL,
 	created_by NVARCHAR(50) NOT NULL,
-    created_on DATETIME NOT NULL,
+    created_on DATETIME NULL,
     updated_by NVARCHAR(50) NOT NULL,
-    updated_on DATETIME NOT NULL,
+    updated_on DATETIME NULL,
  CONSTRAINT PK_DEP_DEPARTMENT PRIMARY KEY (department_id),
  CONSTRAINT UK_DEP_DEPARTMENT_department_name UNIQUE (department_name)
 
@@ -42,9 +42,9 @@ CREATE TABLE dbo.EMP_EMPLOYEE
   department_id INT NOT NULL,
   manager_id INT,
   created_by NVARCHAR(50) NOT NULL,
-  created_on DATETIME NOT NULL,
-  updated_by NVARCHAR(50) NOT NULL,
-  updated_on DATETIME NOT NULL,
+    created_on DATETIME NULL,
+    updated_by NVARCHAR(50) NOT NULL,
+    updated_on DATETIME NULL,
   CONSTRAINT UK_EMP_EMPLOYEE_first_name_last_name UNIQUE (first_name,last_name),
   CONSTRAINT FK_DEP_DEPARTMENT_EMP_EMPLOYEE
     FOREIGN KEY (department_id)
@@ -67,9 +67,9 @@ CREATE TABLE dbo.EMD_EMPLOYEE_DETAILS
   gender CHAR(1) NOT NULL,
   country_id INT NOT NULL,
   created_by NVARCHAR(50) NOT NULL,
-  created_on DATETIME NOT NULL,
-  updated_by NVARCHAR(50) NOT NULL,
-  updated_on DATETIME NOT NULL,
+    created_on DATETIME NULL,
+    updated_by NVARCHAR(50) NOT NULL,
+    updated_on DATETIME NULL,
   CONSTRAINT FK_COU_COUNTRY_EMD_EMPLOYEE_DETAILS 
 	FOREIGN KEY (country_id) 
 	REFERENCES dbo.COU_COUNTRY (country_id) 
