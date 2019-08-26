@@ -1,8 +1,7 @@
 --Select the database where we need to run this script
 
---Dummy change
 --USE [MyDatabase]
---USE [AnirbanDB]
+USE [AnirbanDB]
 GO
 
 --Creating table for Countries
@@ -67,7 +66,7 @@ CREATE TABLE dbo.EMD_EMPLOYEE_DETAILS
 ( 
 	employee_details_id INT IDENTITY(1,1) PRIMARY KEY,
 	employee_id INT NOT NULL,
-	phone_number INT NOT NULL UNIQUE,
+	phone_number NVARCHAR(50) NOT NULL UNIQUE,
 	address NVARCHAR(50) NOT NULL,
 	mail_id NVARCHAR(50) NOT NULL UNIQUE,
 	gender CHAR(1) NOT NULL,
