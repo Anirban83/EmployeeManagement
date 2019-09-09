@@ -8,6 +8,7 @@ namespace EmployeeManagement.DAL
         public Employee Save(Employee employee)
         {
             employee.EmployeeId = 1;
+            employee.EmployeeDetails.EmployeeDetailsID = 1;
             return employee;
         }
     }

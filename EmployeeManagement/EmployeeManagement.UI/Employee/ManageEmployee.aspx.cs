@@ -18,7 +18,7 @@ namespace EmployeeManagement.UI
         {
             try
             {
-                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtName.Text, txtAddress.Text);
+                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text,Convert.ToInt32(txtDeptID.Text),Convert.ToInt32(txtSalary.Text),Convert.ToInt32(txtManagerID.Text), Constants.EmployeeProperties.DEFAULT_ID,txtNumber.Text,txtAddress.Text,txtMail.Text,Convert.ToChar(rbtnGender.SelectedValue),Convert.ToInt32(txtCountryID.Text));
                 IEmployeeBL empBL = new EmployeeBL();
                 employee = empBL.Save(employee);
 
@@ -36,9 +36,22 @@ namespace EmployeeManagement.UI
         private void LoadEmployeeData(Employee employee)
         {
             txtEmployeeId.Text = employee.EmployeeId.ToString();
-            txtName.Text = employee.Name;
+            txtFirstName.Text = employee.FirstName;
+            txtLastName.Text = employee.LastName;
+            txtDeptID.Text = Convert.ToString(employee.DeptID);
+            txtSalary.Text = Convert.ToString(employee.Salary);
             txtBonus.Text = employee.Bonus.ToString();
+            txtManagerID.Text = Convert.ToString(employee.ManagerID);
+            txtNumber.Text = employee.EmployeeDetails.Number;
             txtAddress.Text = employee.EmployeeDetails.Address;
+            txtMail.Text = employee.EmployeeDetails.Mail;
+            if (employee.EmployeeDetails.Gender=='M')
+            { rbtnGender.Items[0].Selected = true; }
+            else if (employee.EmployeeDetails.Gender == 'F')
+            { rbtnGender.Items[1].Selected = true; }
+            else
+            { rbtnGender.Items[2].Selected = true; }
+            txtCountryID.Text = Convert.ToString(employee.EmployeeDetails.CountryID);
         }
         #endregion
     }
