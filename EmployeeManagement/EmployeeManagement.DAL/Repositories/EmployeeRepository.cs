@@ -17,7 +17,7 @@ namespace EmployeeManagement.DAL
            SqlDataAdapter myAdapter = new SqlDataAdapter();
         public ArrayList GetCountryID()
            {
-               sqlCmd = new SqlCommand("select country_id,country_name from [MyDatabase].[dbo].[COU_COUNTRY]", sqlCon);
+               sqlCmd = new SqlCommand("select country_id,country_name from dbo.COU_COUNTRY", sqlCon);
                sqlCmd.CommandType = CommandType.Text;
                sqlCon.Open();
 
@@ -39,7 +39,7 @@ namespace EmployeeManagement.DAL
         }
         public ArrayList GetDeptID()
         {
-            sqlCmd = new SqlCommand("select department_id,department_name from [MyDatabase].[dbo].[DEP_DEPARTMENT] order by department_id ", sqlCon);
+            sqlCmd = new SqlCommand("select department_id,department_name from dbo.DEP_DEPARTMENT order by department_id ", sqlCon);
             sqlCmd.CommandType = CommandType.Text;
             sqlCon.Open();
 
@@ -61,7 +61,7 @@ namespace EmployeeManagement.DAL
         }
          public ArrayList ShowManagerNames(int key)
         {
-            sqlCmd = new SqlCommand("select employee_id,concat(first_name,' ',last_name) as employee_name from [MyDatabase].[dbo].[EMP_EMPLOYEE] where department_id=" + key, sqlCon);
+            sqlCmd = new SqlCommand("select employee_id,concat(first_name,' ',last_name) as employee_name from dbo.EMP_EMPLOYEE where department_id=" + key, sqlCon);
             sqlCmd.CommandType = CommandType.Text;
             sqlCon.Open();
 
@@ -126,7 +126,7 @@ namespace EmployeeManagement.DAL
                }
                catch (Exception ex)
                {
-
+                   throw ex;
                }
                finally
                {

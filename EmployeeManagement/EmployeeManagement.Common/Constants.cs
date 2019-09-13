@@ -13,5 +13,11 @@ namespace EmployeeManagement.Common
         {
             public const int DEFAULT_ID = -1;
         }
+
+        public static class ReportType
+        {
+            public const string CountryReport = "CR";
+            public const string GenderReport = "GR";
+        }
     }
 }

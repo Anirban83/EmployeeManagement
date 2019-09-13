@@ -32,7 +32,7 @@ namespace EmployeeManagement.UI
             try
             {
                 int? managerID = !String.IsNullOrEmpty(ddlEmployee.SelectedValue)?Convert.ToInt32(ddlEmployee.SelectedValue):(int?)null;
-                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlDept.SelectedValue), Convert.ToInt32(txtSalary.Text), managerID, txtNumber.Text, txtAddress.Text, txtMail.Text, Convert.ToChar(rbtnGender.SelectedValue), Convert.ToInt32(ddlDept.SelectedValue));
+                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlDept.SelectedValue), Convert.ToInt32(txtSalary.Text), managerID, txtNumber.Text, txtAddress.Text, txtMail.Text, Convert.ToChar(rbtnGender.SelectedValue), Convert.ToInt32(ddlCountry.SelectedValue));
                 IEmployeeBL empBL = new EmployeeBL();
                 employee = empBL.Save(employee);
 

@@ -42,7 +42,9 @@
     <Compile Include="EmployeeBL.cs" />
     <Compile Include="Interfaces\IEmployeeBL.cs" />
     <Compile Include="Interfaces\ILoadFirstBL.cs" />
+    <Compile Include="Interfaces\IReportBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagement.DAL\EmployeeManagement.DAL.csproj">
