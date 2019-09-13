@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="EmployeeBL.cs" />
     <Compile Include="Interfaces\IEmployeeBL.cs" />
+    <Compile Include="Interfaces\ILoadFirstBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

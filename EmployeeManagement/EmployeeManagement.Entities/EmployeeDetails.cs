@@ -49,9 +49,8 @@ namespace EmployeeManagement.Entities
         #endregion
 
         #region Constructor
-        public EmployeeDetails(int employeeDetailsID,string number,string address,string mail,char gender,int countryID)
+        public EmployeeDetails(string number, string address, string mail, char gender, int countryID)
         {
-            this.EmployeeDetailsID = employeeDetailsID;
             this.Number = number;
             this.Address = address;
             this.Mail = mail;

@@ -1,6 +1,7 @@
 ﻿
 using EmployeeManagement.DAL;
 using EmployeeManagement.Entities;
+using System.Collections;
 
 namespace EmployeeManagement.BL
 {
@@ -27,5 +28,24 @@ namespace EmployeeManagement.BL
             return 20;
         }
         #endregion
+    }
+    public class LoadFirstBL : ILoadFirstBL
+    {
+        public ArrayList DeptIDSave()
+        {
+            ILoadFirstRepository loadFirst = new LoadFirstRepository();
+            return loadFirst.GetDeptID();
+        }
+        public ArrayList ShowManager(int key)
+        {
+            ILoadFirstRepository loadFirst = new LoadFirstRepository();
+            return loadFirst.ShowManagerNames(key);
+        }
+        public ArrayList CountryIDSave()
+        {
+            ILoadFirstRepository loadFirst = new LoadFirstRepository();
+            return loadFirst.GetCountryID();
+        }
+
     }
 }

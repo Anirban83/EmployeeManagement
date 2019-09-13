@@ -17,7 +17,7 @@ namespace EmployeeManagement.Entities
         private int deptID;
         private int salary;
         private int bonus;
-        private int managerID;
+        private int? managerID;
         private EmployeeDetails employeeDetails;
 
         public int EmployeeId
@@ -62,7 +62,7 @@ namespace EmployeeManagement.Entities
             set { bonus = value; }
         }
 
-        public int ManagerID
+        public int? ManagerID
         {
             get { return managerID; }
             set { managerID = value; }

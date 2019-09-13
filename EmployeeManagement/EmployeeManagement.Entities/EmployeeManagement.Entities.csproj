@@ -40,7 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Employee.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Department.cs" />
     <Compile Include="Factories\EmployeeFactory.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="PermanentEmployee.cs" />
     <Compile Include="EmployeeDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
