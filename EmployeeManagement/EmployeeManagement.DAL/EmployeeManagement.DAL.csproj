@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ILoadFirstRepository.cs" />
+    <Compile Include="Interfaces\IMasterDataRepository.cs" />
     <Compile Include="Interfaces\IReportRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\MasterDataRepository.cs" />
     <Compile Include="Repositories\ReportRepository.cs" />
   </ItemGroup>
   <ItemGroup>

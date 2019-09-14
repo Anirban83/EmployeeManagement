@@ -3,6 +3,7 @@ using EmployeeManagement.Entities;
 using EmployeeManagement.BL;
 using EmployeeManagement.Common;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace EmployeeManagement.UI
 {
@@ -15,7 +16,7 @@ namespace EmployeeManagement.UI
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
-                ILoadFirstBL lfBL = new LoadFirstBL();
+                IMasterDataBL lfBL = new MasterDataBL();
                 ddlDept.DataSource = lfBL.DeptIDSave();
                 ddlDept.DataTextField = "DeptName";
                 ddlDept.DataValueField = "DeptID";
@@ -31,8 +32,8 @@ namespace EmployeeManagement.UI
         {
             try
             {
-                int? managerID = !String.IsNullOrEmpty(ddlEmployee.SelectedValue)?Convert.ToInt32(ddlEmployee.SelectedValue):(int?)null;
-                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlDept.SelectedValue), Convert.ToInt32(txtSalary.Text), managerID, txtNumber.Text, txtAddress.Text, txtMail.Text, Convert.ToChar(rbtnGender.SelectedValue), Convert.ToInt32(ddlCountry.SelectedValue));
+                int? managerID = !String.IsNullOrEmpty(ddlManager.SelectedValue)?Convert.ToInt32(ddlManager.SelectedValue):(int?)null;
+                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlDept.SelectedValue), Convert.ToInt32(txtSalary.Text), managerID, txtPhoneNumber.Text, txtAddress.Text, txtMail.Text, Convert.ToChar(rbtnGender.SelectedValue), Convert.ToInt32(ddlCountry.SelectedValue));
                 IEmployeeBL empBL = new EmployeeBL();
                 employee = empBL.Save(employee);
 
@@ -54,7 +55,7 @@ namespace EmployeeManagement.UI
             txtLastName.Text = employee.LastName;
             txtSalary.Text = Convert.ToString(employee.Salary);
             txtBonus.Text = employee.Bonus.ToString();
-            txtNumber.Text = employee.EmployeeDetails.Number;
+            txtPhoneNumber.Text = employee.EmployeeDetails.Number;
             txtAddress.Text = employee.EmployeeDetails.Address;
             txtMail.Text = employee.EmployeeDetails.Mail;
             if (employee.EmployeeDetails.Gender == 'M')
@@ -68,11 +69,12 @@ namespace EmployeeManagement.UI
 
         protected void ddlDept_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ILoadFirstBL lfBL = new LoadFirstBL();
-            ddlEmployee.DataSource = lfBL.ShowManager(Convert.ToInt32(ddlDept.SelectedValue));
-            ddlEmployee.DataTextField = "ManagerName";
-            ddlEmployee.DataValueField = "ManagerID";
-            ddlEmployee.DataBind();
+            IMasterDataBL lfBL = new MasterDataBL();
+            ddlManager.DataSource = lfBL.ShowManager(Convert.ToInt32(ddlDept.SelectedValue));
+            ddlManager.DataTextField = "ManagerName";
+            ddlManager.DataValueField = "ManagerID";
+            ddlManager.DataBind();
+            ddlManager.Items.Insert(0, new ListItem("None", ""));
         }
     }
 }

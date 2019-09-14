@@ -139,13 +139,13 @@ namespace EmployeeManagement.UI {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// ddlEmployee control.
+        /// ddlManager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEmployee;
+        protected global::System.Web.UI.WebControls.DropDownList ddlManager;
         
         /// <summary>
         /// Label8 control.
@@ -157,22 +157,13 @@ namespace EmployeeManagement.UI {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// txtNumber control.
+        /// txtPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumber;
-        
-        /// <summary>
-        /// CompareValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
         
         /// <summary>
         /// Label4 control.

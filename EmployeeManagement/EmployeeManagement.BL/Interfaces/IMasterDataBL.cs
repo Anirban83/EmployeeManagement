@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.BL
 {
-    public interface ILoadFirstBL
+    public interface IMasterDataBL
     {
             ArrayList DeptIDSave();
             ArrayList CountryIDSave();

@@ -29,23 +29,4 @@ namespace EmployeeManagement.BL
         }
         #endregion
     }
-    public class LoadFirstBL : ILoadFirstBL
-    {
-        public ArrayList DeptIDSave()
-        {
-            ILoadFirstRepository loadFirst = new LoadFirstRepository();
-            return loadFirst.GetDeptID();
-        }
-        public ArrayList ShowManager(int key)
-        {
-            ILoadFirstRepository loadFirst = new LoadFirstRepository();
-            return loadFirst.ShowManagerNames(key);
-        }
-        public ArrayList CountryIDSave()
-        {
-            ILoadFirstRepository loadFirst = new LoadFirstRepository();
-            return loadFirst.GetCountryID();
-        }
-
-    }
 }

@@ -70,8 +70,7 @@
                         <td>
                             <asp:Label ID="Label7" runat="server" Text="Manager ID: "></asp:Label></td>
                         <td>
-                            <asp:DropDownList ID="ddlEmployee" runat="server" Height="19px" Width="180px">
-                                <asp:ListItem Value="0">select manager</asp:ListItem>
+                            <asp:DropDownList ID="ddlManager" runat="server" Height="19px" Width="180px">
                             </asp:DropDownList>
                        </td>
                     </tr>
@@ -86,8 +85,7 @@
                         <td>
                             <asp:Label ID="Label8" runat="server" Text="Phone Number: "></asp:Label></td>
                         <td>
-                            <asp:TextBox ID="txtNumber" runat="server" MinLength="10" MaxLength="10" Width="170px"></asp:TextBox>
-                            <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="only integer values allowed" ControlToValidate="txtNumber" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
+                            <asp:TextBox ID="txtPhoneNumber" runat="server" MinLength="10" MaxLength="10" Pattern="[0-9]{10}" Width="170px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

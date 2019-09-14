@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.DAL
 {
-    public interface ILoadFirstRepository
+    public interface IMasterDataRepository
     {
         ArrayList GetDeptID();
         ArrayList GetCountryID();
