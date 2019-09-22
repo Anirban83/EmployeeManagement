@@ -14,7 +14,7 @@ namespace EmployeeManagement.DAL
         SqlConnection sqlCon = new SqlConnection(connectionStr);
         SqlCommand sqlCmd;
         SqlDataAdapter myAdapter = new SqlDataAdapter();
-        public ArrayList GetCountryID()
+        public ArrayList GetCountry()
         {
             sqlCmd = new SqlCommand("select country_id,country_name from dbo.COU_COUNTRY", sqlCon);
             sqlCmd.CommandType = CommandType.Text;
@@ -36,7 +36,7 @@ namespace EmployeeManagement.DAL
             sqlCon.Close();
             return countryList;
         }
-        public ArrayList GetDeptID()
+        public ArrayList GetDepartment()
         {
             sqlCmd = new SqlCommand("select department_id,department_name from dbo.DEP_DEPARTMENT order by department_id ", sqlCon);
             sqlCmd.CommandType = CommandType.Text;
@@ -58,27 +58,6 @@ namespace EmployeeManagement.DAL
             sqlCon.Close();
             return deptList;
         }
-        public ArrayList ShowManagerNames(int key)
-        {
-            sqlCmd = new SqlCommand("select employee_id,concat(first_name,' ',last_name) as employee_name from dbo.EMP_EMPLOYEE where department_id=" + key, sqlCon);
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCon.Open();
-
-            // SqlDataAdapter myAdapter = new SqlDataAdapter();
-            myAdapter.SelectCommand = sqlCmd;
-
-            IDataReader dr = sqlCmd.ExecuteReader();
-
-            ArrayList managerList = new ArrayList();
-            while (dr.Read())
-            {
-                int storingID = Convert.ToInt32(dr["employee_id"]);
-                string storingName = Convert.ToString(dr["employee_name"]);
-                Manager manager = new Manager(storingID, storingName);
-                managerList.Add(manager);
-            }
-            sqlCon.Close();
-            return managerList;
-        }
+        
     }
 }

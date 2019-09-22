@@ -9,8 +9,7 @@ namespace EmployeeManagement.BL
 {
     public interface IMasterDataBL
     {
-            ArrayList DeptIDSave();
-            ArrayList CountryIDSave();
-            ArrayList ShowManager(int key);
+            ArrayList GetDepartment();
+            ArrayList GetCountry();
     }
 }

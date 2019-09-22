@@ -9,8 +9,8 @@ namespace EmployeeManagement.DAL
 {
     public interface IMasterDataRepository
     {
-        ArrayList GetDeptID();
-        ArrayList GetCountryID();
-        ArrayList ShowManagerNames(int key);
+        ArrayList GetDepartment();
+        ArrayList GetCountry();
+       
     }
 }

@@ -5,20 +5,17 @@ namespace EmployeeManagement.BL
 {
     public class MasterDataBL : IMasterDataBL
     {
-        public ArrayList DeptIDSave()
+        IMasterDataRepository masterDataRepo;
+        public ArrayList GetDepartment()
         {
-            IMasterDataRepository masterData = new MasterDataRepository();
-            return masterData.GetDeptID();
+            masterDataRepo = new MasterDataRepository();
+            return masterDataRepo.GetDepartment();
         }
-        public ArrayList ShowManager(int key)
+
+        public ArrayList GetCountry()
         {
-            IMasterDataRepository masterData = new MasterDataRepository();
-            return masterData.ShowManagerNames(key);
-        }
-        public ArrayList CountryIDSave()
-        {
-            IMasterDataRepository masterData = new MasterDataRepository();
-            return masterData.GetCountryID();
+            masterDataRepo = new MasterDataRepository();
+            return masterDataRepo.GetCountry();
         }
 
     }

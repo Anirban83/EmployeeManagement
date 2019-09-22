@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bonus-info>
+  <country id="ARG">
+    <bonus dept="Information Technology">0.05</bonus>
+    <bonus dept="Others">0.00</bonus>
+  </country>  
+  <country id="AUS">
+    <bonus dept="Sales">0.10</bonus>
+    <bonus dept="Operations">0.20</bonus>
+    <bonus dept="Others">0.05</bonus>
+  </country>
+  <country id="FRA">
+    <bonus dept="Information Technology">0.10</bonus>
+    <bonus dept="Sales">0.10</bonus>
+    <bonus dept="Operations">0.10</bonus>
+    <bonus dept="Accounting">0.10</bonus>
+    <bonus dept="Others">0.10</bonus>
+  </country>
+  <country id="IND">
+    <bonus dept="Information Technology">0.10</bonus>
+    <bonus dept="Sales">0.25</bonus>
+    <bonus dept="Operations">0.20</bonus>
+    <bonus dept="Accounting">0.15</bonus>
+    <bonus dept="Others">0.10</bonus>
+  </country>
+  <country id="USA">
+    <bonus dept="Information Technology">0.20</bonus>
+    <bonus dept="Others">0.10</bonus>
+  </country>
+  <country id="Others">
+    <bonus dept="Others">0.05</bonus>
+  </country>
+</bonus-info>
