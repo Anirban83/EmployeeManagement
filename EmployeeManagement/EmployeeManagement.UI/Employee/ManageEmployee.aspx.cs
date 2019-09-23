@@ -42,8 +42,7 @@ namespace EmployeeManagement.UI
         {
             try
             {
-                int? managerID = !String.IsNullOrEmpty(ddlManager.SelectedValue) ? Convert.ToInt32(ddlManager.SelectedValue) : (int?)null;
-                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlDept.SelectedValue), Convert.ToInt32(txtSalary.Text), managerID, txtPhoneNumber.Text, txtAddress.Text, txtMail.Text, Convert.ToChar(rbtnGender.SelectedValue), Convert.ToInt32(ddlCountry.SelectedValue));
+                Employee employee = employeeFactory.CreateEmployee(Constants.EmployeeProperties.DEFAULT_ID, txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlDept.SelectedValue), Convert.ToInt32(txtSalary.Text), Convert.ToInt32(ddlManager.SelectedValue), txtPhoneNumber.Text, txtAddress.Text, txtMail.Text, Convert.ToChar(rbtnGender.SelectedValue), Convert.ToInt32(ddlCountry.SelectedValue));
                 
                 employee = empBL.Save(employee);
 
@@ -81,8 +80,8 @@ namespace EmployeeManagement.UI
         {
 
             ddlManager.DataSource = empBL.GetManager(Convert.ToInt32(ddlDept.SelectedValue));
-            ddlManager.DataTextField = "ManagerName";
-            ddlManager.DataValueField = "ManagerID";
+            ddlManager.DataTextField = "FullName";
+            ddlManager.DataValueField = "EmployeeId";
             ddlManager.DataBind();
             ListItem defaultManager = new ListItem("Select a manager", "-1");
             ddlManager.Items.Insert(0, defaultManager);

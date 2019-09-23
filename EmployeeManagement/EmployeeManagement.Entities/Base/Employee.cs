@@ -14,10 +14,11 @@ namespace EmployeeManagement.Entities
         private string employeeType;
         private string firstName;
         private string lastName;
+        private string fullName;
         private int deptID;
         private int salary;
         private int bonus;
-        private int? managerID;
+        private int managerID;
         private EmployeeDetails employeeDetails;
 
         public int EmployeeId
@@ -43,6 +44,11 @@ namespace EmployeeManagement.Entities
             get { return lastName; }
             set { lastName = value; }
         }
+        
+        public string FullName
+        {
+            get { return this.FirstName + " " + this.LastName; }
+        }
 
         public int DeptID
         {
@@ -62,7 +68,7 @@ namespace EmployeeManagement.Entities
             set { bonus = value; }
         }
 
-        public int? ManagerID
+        public int ManagerID
         {
             get { return managerID; }
             set { managerID = value; }

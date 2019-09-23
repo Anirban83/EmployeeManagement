@@ -34,7 +34,7 @@ namespace EmployeeManagement.DAL
                 sqlCmd.Parameters.AddWithValue("@salary", employee.Salary);
                 sqlCmd.Parameters.AddWithValue("@bonus", employee.Bonus);
                 sqlCmd.Parameters.AddWithValue("@departmentId", employee.DeptID);
-                if (employee.ManagerID != null)
+                if (employee.ManagerID != -1)
                     sqlCmd.Parameters.AddWithValue("@managerId", employee.ManagerID);
                 else
                     sqlCmd.Parameters.AddWithValue("@managerId", DBNull.Value);
@@ -66,7 +66,7 @@ namespace EmployeeManagement.DAL
 
         public ArrayList GetManager(int deptId)
         {
-            sqlCmd = new SqlCommand("select employee_id,concat(first_name,' ',last_name) as employee_name from dbo.EMP_EMPLOYEE where department_id=" + deptId, sqlCon);
+            sqlCmd = new SqlCommand("select employee_id,first_name,last_name from dbo.EMP_EMPLOYEE where department_id=" + deptId, sqlCon);
             sqlCmd.CommandType = CommandType.Text;
             sqlCon.Open();
 
@@ -74,13 +74,14 @@ namespace EmployeeManagement.DAL
             myAdapter.SelectCommand = sqlCmd;
 
             IDataReader dr = sqlCmd.ExecuteReader();
-
+            EmployeeFactory empFactory = new EmployeeFactory();
             ArrayList managerList = new ArrayList();
             while (dr.Read())
             {
-                int storingID = Convert.ToInt32(dr["employee_id"]);
-                string storingName = Convert.ToString(dr["employee_name"]);
-                Manager manager = new Manager(storingID, storingName);
+                int employeeId = Convert.ToInt32(dr["employee_id"]);
+                string employeeFirstName = Convert.ToString(dr["first_name"]);
+                string employeeLastName = Convert.ToString(dr["last_name"]);
+                Employee manager = empFactory.CreateManager(employeeId, employeeFirstName, employeeLastName);
                 managerList.Add(manager);
             }
             sqlCon.Close();
