@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Employee\ManageEmployee.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -66,6 +67,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee\ManageEmployee.aspx.cs">
       <DependentUpon>ManageEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

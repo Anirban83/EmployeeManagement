@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Principal;
+using System.Web;
 
 namespace EmployeeManagement.UI
 {
@@ -29,20 +30,22 @@ namespace EmployeeManagement.UI
 
         protected void btnRedirect_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            Response.Write("You Typed: " + name);
-            //Session["UserName"] = txtName.Text;
-            //Session["UserEmail"] = txtEmail.Text;
-            ////Write Cookie  
-            //HttpCookie cookie = new HttpCookie("Democookie");
-            ////Response.Cookies["userinfo"]["UserName"] = txtName.Text;
-            ////Response.Cookies["userinfo"]["UserEmail"] = txtEmail.Text;
-            //cookie["UserName"] = txtName.Text;
-            //cookie["UserEmail"] = txtEmail.Text;
-            //Response.Cookies.Add(cookie);
-            //cookie.Expires = DateTime.Now.AddDays(1);
+            Session["UserName"] = txtName.Text;
+            Session["UserEmail"] = txtEmail.Text;
 
-            //Response.Redirect("~/Home2.aspx");
+            Application["UserName"] = txtName.Text;
+            Application["UserEmail"] = txtEmail.Text;
+
+            HttpCookie cookie = new HttpCookie("userinfo");
+            cookie["UserName"] = txtName.Text;
+            cookie["UserEmail"] = txtEmail.Text;
+            Response.Cookies.Add(cookie);
+            cookie.Expires = DateTime.Now.AddSeconds(30);
+
+            //Response.Cookies["userinfo"]["UserName"] = txtName.Text;
+            //Response.Cookies["userinfo"]["UserEmail"] = txtEmail.Text;
+
+            Response.Redirect("~/About.aspx");
         }
     }
 }
