@@ -61,6 +61,8 @@
     <Content Include="Employee\ManageEmployee.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registration\Register.aspx" />
     <Content Include="Reports\CountryReport.aspx" />
     <Content Include="Reports\GenderReport.aspx" />
     <Content Include="UserControls\ucReport.ascx" />
@@ -91,7 +93,21 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CountryReport.aspx.cs">
       <DependentUpon>CountryReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
