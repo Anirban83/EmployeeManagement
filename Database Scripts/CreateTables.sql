@@ -85,3 +85,21 @@ CONSTRAINT FK_EMP_EMPLOYEE_EMD_EMPLOYEE_DETAILS
 	ON DELETE CASCADE
 )
 GO
+
+CREATE TABLE dbo.USR_USER(
+	user_id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	user_name NVARCHAR(50) NOT NULL,
+	password NVARCHAR(500) NOT NULL,
+	mail_id NVARCHAR(50) NOT NULL,
+	retry_attempts INT NULL,
+	is_locked BIT NULL,
+	locked_datetime DATETIME NULL,
+	created_by NVARCHAR(50) NOT NULL,
+    created_on DATETIME NULL,
+    updated_by NVARCHAR(50) NOT NULL,
+    updated_on DATETIME NULL
+
+CONSTRAINT UK_USR_USER_user_name 
+	UNIQUE (user_name)
+)
+GO

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeManagement.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace EmployeeManagement.UI
 {
     public partial class Login : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,7 +19,9 @@ namespace EmployeeManagement.UI
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if(FormsAuthentication.Authenticate(txtUserName.Text, txtPassword.Text))
+            IAuthenticateBL authBL = new AuthenticateBL();
+            string encryptedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPassword.Text, "SHA1");
+            if (authBL.AuthenticateUser(txtUserName.Text, encryptedPassword))
             {
                 FormsAuthentication.RedirectFromLoginPage(txtUserName.Text, chkBoxRememberMe.Checked);
             }

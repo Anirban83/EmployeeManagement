@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticateBL.cs" />
     <Compile Include="EmployeeBL.cs" />
+    <Compile Include="Interfaces\IAuthenticateBL.cs" />
     <Compile Include="Interfaces\IEmployeeBL.cs" />
     <Compile Include="Interfaces\IMasterDataBL.cs" />
     <Compile Include="Interfaces\IReportBL.cs" />
